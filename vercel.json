@@ -2,69 +2,57 @@
   "version": 2,
   "builds": [
     {
-      "src": "package.json",
+      "src": "package.json", // 這個 builds 設定通常對於 Vite 專案不是必需的，Vercel 會自動處理
       "use": "@vercel/static-build",
       "config": {
         "distDir": "dist"
       }
     }
   ],
-  "routes": [
-    {
-      "src": "/static/(.*)",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/(.*\\.(js|css|ico|png|jpg|jpeg|gif|svg|webp|woff|woff2))",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/(.*).(js|css)",
-      "headers": {
-        "cache-control": "public, max-age=31536000, immutable"
-      }
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
+  // "routes" 整個區塊將被移除或重寫
+  // 我們將 routes 的功能分散到 headers 和 rewrites (如果需要)
+
   "headers": [
+    // 你原有的全局 headers 設定可以保留
     {
       "source": "/(.*)",
       "headers": [
-        {
-          "key": "X-Content-Type-Options",
-          "value": "nosniff"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
-        },
-        {
-          "key": "X-XSS-Protection",
-          "value": "1; mode=block"
-        },
-        {
-          "key": "Referrer-Policy",
-          "value": "strict-origin-when-cross-origin"
-        },
-        {
-          "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;"
-        }
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline' fonts.googleapis.com; font-src 'self' fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https:;" }
+      ]
+    },
+    // 從舊 "routes" 提取出來的針對靜態資源的 cache-control header
+    {
+      "source": "/static/(.*)", // 通常 Vite 專案的靜態資源會在 `assets` 目錄下，路徑可能是 `/assets/(.*)`
+      "headers": [
+        { "key": "cache-control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      // 匹配所有常見的靜態資源檔案類型
+      "source": "/(.*\\.(?:js|css|ico|png|jpg|jpeg|gif|svg|webp|woff|woff2|json|xml|txt|map|avif|otf|ttf|eot))$",
+      "headers": [
+        { "key": "cache-control", "value": "public, max-age=31536000, immutable" }
       ]
     }
   ],
   "redirects": [
+    // 你原有的 redirects 設定可以保留
     {
       "source": "/home",
       "destination": "/",
       "permanent": true
+    }
+  ],
+  // 對於單頁應用 (SPA) 如 Vite/React 專案，通常需要將所有未匹配到的路徑重寫到 index.html
+  // 這是之前 "routes": [{ "src": "/(.*)", "dest": "/index.html" }] 的功能
+  "rewrites": [
+    {
+      "source": "/(.*)", // 匹配所有路徑
+      "destination": "/index.html" // 將它們指向 index.html，讓前端路由處理
     }
   ],
   "env": {

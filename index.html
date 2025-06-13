@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowFuse - AI-Powered Project Management</title>
+    <meta name="description" content="Transform chaos into clarity with AI-powered project management that adapts to your team's rhythm.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="nav-logo">
+                    <a href="index.html" class="logo-link">
+                        <div class="logo-icon">
+                            <div class="logo-shape"></div>
+                        </div>
+                        <span class="logo-text">FlowFuse</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="nav-desktop">
+                    <div class="nav-links">
+                        <a href="index.html" class="nav-link active">Home</a>
+                        <a href="features.html" class="nav-link">Features</a>
+                        
+                        <div class="dropdown">
+                            <button class="dropdown-trigger">
+                                Solutions
+                                <svg class="dropdown-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu">
+                                <div class="dropdown-section">
+                                    <div class="dropdown-header">By Role</div>
+                                    <a href="coming-soon.html?feature=project-managers" class="dropdown-item">
+                                        <div class="dropdown-item-title">Project Managers</div>
+                                        <div class="dropdown-item-desc">Streamline complex projects</div>
+                                    </a>
+                                    <a href="coming-soon.html?feature=operations" class="dropdown-item">
+                                        <div class="dropdown-item-title">Operations Teams</div>
+                                        <div class="dropdown-item-desc">Optimize daily workflows</div>
+                                    </a>
+                                    <a href="coming-soon.html?feature=marketing" class="dropdown-item">
+                                        <div class="dropdown-item-title">Marketing Teams</div>
+                                        <div class="dropdown-item-desc">Coordinate campaigns</div>
+                                    </a>
+                                </div>
+                                <div class="dropdown-section">
+                                    <div class="dropdown-header">By Industry</div>
+                                    <a href="coming-soon.html?feature=startups" class="dropdown-item">
+                                        <div class="dropdown-item-title">Tech Startups</div>
+                                        <div class="dropdown-item-desc">Scale efficiently</div>
+                                    </a>
+                                    <a href="coming-soon.html?feature=agencies" class="dropdown-item">
+                                        <div class="dropdown-item-title">Agencies</div>
+                                        <div class="dropdown-item-desc">Manage client projects</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="coming-soon.html?feature=pricing" class="nav-link">Pricing</a>
+                        
+                        <div class="dropdown">
+                            <button class="dropdown-trigger">
+                                Resources
+                                <svg class="dropdown-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="coming-soon.html?feature=blog" class="dropdown-item">
+                                    <div class="dropdown-item-title">Blog</div>
+                                    <div class="dropdown-item-desc">Latest insights & tips</div>
+                                </a>
+                                <a href="coming-soon.html?feature=help" class="dropdown-item">
+                                    <div class="dropdown-item-title">Help Center</div>
+                                    <div class="dropdown-item-desc">Documentation & guides</div>
+                                </a>
+                                <a href="coming-soon.html?feature=api" class="dropdown-item">
+                                    <div class="dropdown-item-title">API Docs</div>
+                                    <div class="dropdown-item-desc">Developer resources</div>
+                                </a>
+                                <a href="coming-soon.html?feature=community" class="dropdown-item">
+                                    <div class="dropdown-item-title">Community</div>
+                                    <div class="dropdown-item-desc">Connect with users</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-actions">
+                        <a href="coming-soon.html?feature=login" class="btn btn-ghost">Log In</a>
+                        <a href="signup.html" class="btn btn-primary">Start Free Trial</a>
+                    </div>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <div class="mobile-menu-content">
+                    <a href="index.html" class="mobile-nav-link active">Home</a>
+                    <a href="features.html" class="mobile-nav-link">Features</a>
+                    <a href="coming-soon.html?feature=pricing" class="mobile-nav-link">Pricing</a>
+                    
+                    <div class="mobile-nav-section">
+                        <div class="mobile-nav-header">Solutions</div>
+                        <a href="coming-soon.html?feature=project-managers" class="mobile-nav-sublink">Project Managers</a>
+                        <a href="coming-soon.html?feature=operations" class="mobile-nav-sublink">Operations Teams</a>
+                        <a href="coming-soon.html?feature=marketing" class="mobile-nav-sublink">Marketing Teams</a>
+                        <a href="coming-soon.html?feature=startups" class="mobile-nav-sublink">Tech Startups</a>
+                        <a href="coming-soon.html?feature=agencies" class="mobile-nav-sublink">Agencies</a>
+                    </div>
+                    
+                    <div class="mobile-nav-section">
+                        <div class="mobile-nav-header">Resources</div>
+                        <a href="coming-soon.html?feature=blog" class="mobile-nav-sublink">Blog</a>
+                        <a href="coming-soon.html?feature=help" class="mobile-nav-sublink">Help Center</a>
+                        <a href="coming-soon.html?feature=api" class="mobile-nav-sublink">API Docs</a>
+                        <a href="coming-soon.html?feature=community" class="mobile-nav-sublink">Community</a>
+                    </div>
+                    
+                    <div class="mobile-nav-actions">
+                        <a href="coming-soon.html?feature=login" class="btn btn-ghost">Log In</a>
+                        <a href="signup.html" class="btn btn-primary">Start Free Trial</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-bg-element hero-bg-1"></div>
+            <div class="hero-bg-element hero-bg-2"></div>
+            <div class="hero-bg-element hero-bg-3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <!-- Left side - Content -->
+                <div class="hero-text">
+                    <!-- Badge -->
+                    <div class="hero-badge">
+                        <svg class="hero-badge-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                        </svg>
+                        <span>AI-Powered Project Management</span>
+                    </div>
+                    
+                    <!-- Main headline -->
+                    <h1 class="hero-title">
+                        Where Teams Find Their
+                        <span class="hero-title-accent">Perfect Flow</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        FlowFuse transforms chaos into clarity with AI that learns your team's rhythm. 
+                        Experience project management that actually adapts to how you work.
+                    </p>
+                    
+                    <!-- Key benefits -->
+                    <div class="hero-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon benefit-icon-teal">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <span>AI-powered automation</span>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon benefit-icon-orange">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <span>Adaptive workflows</span>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon benefit-icon-cyan">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <span>Seamless collaboration</span>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon benefit-icon-purple">
+                                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path>
+                                </svg>
+                            </div>
+                            <span>Intelligent insights</span>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA buttons -->
+                    <div class="hero-actions">
+                        <a href="signup.html" class="btn btn-primary btn-lg">
+                            Start Free Trial
+                            <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                            </svg>
+                        </a>
+                        <a href="coming-soon.html?feature=demo" class="btn btn-outline btn-lg">
+                            <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.5a2.5 2.5 0 015 0H17M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Watch Demo
+                        </a>
+                    </div>
+                    
+                    <!-- Social proof -->
+                    <div class="hero-social-proof">
+                        <div class="social-proof-text">
+                            <span class="social-proof-number">2,500+</span> teams trust FlowFuse
+                        </div>
+                        <div class="social-proof-avatars">
+                            <div class="avatar avatar-1"></div>
+                            <div class="avatar avatar-2"></div>
+                            <div class="avatar avatar-3"></div>
+                            <div class="avatar avatar-4"></div>
+                            <div class="avatar avatar-more">+</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Right side - Visual -->
+                <div class="hero-visual">
+                    <div class="flow-visual">
+                        <!-- Simplified visual representation -->
+                        <div class="flow-visual-content">
+                            <div class="flow-card flow-card-1">
+                                <div class="flow-card-header"></div>
+                                <div class="flow-card-content">
+                                    <div class="flow-card-line"></div>
+                                    <div class="flow-card-line short"></div>
+                                </div>
+                            </div>
+                            <div class="flow-card flow-card-2">
+                                <div class="flow-card-header"></div>
+                                <div class="flow-card-content">
+                                    <div class="flow-card-line"></div>
+                                    <div class="flow-card-line"></div>
+                                    <div class="flow-card-line short"></div>
+                                </div>
+                            </div>
+                            <div class="flow-card flow-card-3">
+                                <div class="flow-card-header"></div>
+                                <div class="flow-card-content">
+                                    <div class="flow-card-line"></div>
+                                    <div class="flow-card-line short"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating elements -->
+                    <div class="floating-element floating-1"></div>
+                    <div class="floating-element floating-2"></div>
+                    <div class="floating-element floating-3"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-indicator-inner">
+                <div class="scroll-indicator-dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Four Pillars Section -->
+    <section class="four-pillars" id="features">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <svg class="section-badge-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                    </svg>
+                    <span>Four Pillars of Excellence</span>
+                </div>
+                <h2 class="section-title">
+                    Built on Four
+                    <span class="section-title-accent">Core Principles</span>
+                </h2>
+                <p class="section-description">
+                    Every feature in FlowFuse is designed around these four fundamental pillars that make project management intuitive, adaptive, and powerful.
+                </p>
+            </div>
+            
+            <div class="pillars-grid">
+                <div class="pillar-card pillar-teal">
+                    <div class="pillar-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="pillar-title">Intelligent Simplicity</h3>
+                    <p class="pillar-description">
+                        AI-powered interfaces that adapt to your expertise level, revealing complexity gradually as you need it.
+                    </p>
+                    <ul class="pillar-features">
+                        <li>Smart onboarding with AI guidance</li>
+                        <li>Context-aware interface adaptation</li>
+                        <li>Progressive feature disclosure</li>
+                    </ul>
+                </div>
+                
+                <div class="pillar-card pillar-coral">
+                    <div class="pillar-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="pillar-title">Adaptive Workflows</h3>
+                    <p class="pillar-description">
+                        Workflows that evolve with your projects, automatically adjusting to changes while maintaining team alignment.
+                    </p>
+                    <ul class="pillar-features">
+                        <li>Visual workflow builder</li>
+                        <li>Self-healing automation</li>
+                        <li>Dynamic process optimization</li>
+                    </ul>
+                </div>
+                
+                <div class="pillar-card pillar-cyan">
+                    <div class="pillar-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="pillar-title">Seamless Fusion</h3>
+                    <p class="pillar-description">
+                        Perfect integration with your existing tools, creating a unified workspace that feels natural.
+                    </p>
+                    <ul class="pillar-features">
+                        <li>200+ tool integrations</li>
+                        <li>Universal sync protocols</li>
+                        <li>Context-aware data bridging</li>
+                    </ul>
+                </div>
+                
+                <div class="pillar-card pillar-purple">
+                    <div class="pillar-icon">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="pillar-title">Insightful Collaboration</h3>
+                    <p class="pillar-description">
+                        AI-enhanced collaboration that understands team dynamics and facilitates meaningful connections.
+                    </p>
+                    <ul class="pillar-features">
+                        <li>Smart notification filtering</li>
+                        <li>Predictive conflict resolution</li>
+                        <li>Intelligent team insights</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Benefits Section -->
+    <section class="ai-benefits">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    AI That Actually <span class="section-title-accent">Gets Work Done</span>
+                </h2>
+                <p class="section-description">
+                    FlowFuse doesn't just organize your projects—it anticipates needs, automates workflows, and helps your team achieve more with less effort.
+                </p>
+            </div>
+            
+            <div class="ai-benefits-grid">
+                <div class="ai-benefit-card">
+                    <div class="ai-benefit-icon ai-benefit-icon-teal">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="ai-benefit-title">Predictive Planning</h3>
+                    <p class="ai-benefit-description">AI analyzes your team's patterns to suggest optimal project timelines and resource allocation before bottlenecks occur.</p>
+                </div>
+                
+                <div class="ai-benefit-card">
+                    <div class="ai-benefit-icon ai-benefit-icon-orange">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="ai-benefit-title">Smart Automation</h3>
+                    <p class="ai-benefit-description">Workflows that evolve with your projects, automatically adjusting to changes while maintaining team alignment.</p>
+                </div>
+                
+                <div class="ai-benefit-card">
+                    <div class="ai-benefit-icon ai-benefit-icon-cyan">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="ai-benefit-title">Intelligent Insights</h3>
+                    <p class="ai-benefit-description">Real-time analytics and performance insights that turn data into actionable decisions for continuous improvement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <svg class="section-badge-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                    </svg>
+                    <span>Trusted by Leading Teams</span>
+                </div>
+                <h2 class="section-title">
+                    Join <span class="section-title-accent">2,500+ Teams</span> Already Winning
+                </h2>
+                <p class="section-description">
+                    From fast-growing startups to Fortune 500 companies, teams worldwide trust FlowFuse to streamline their workflows and boost productivity.
+                </p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            "FlowFuse transformed how our team collaborates. What used to take us weeks of planning now happens in days, and our project visibility has never been better."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar testimonial-avatar-1"></div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Sarah Chen</div>
+                                <div class="testimonial-role">VP of Product, TechFlow</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            "The AI recommendations are incredibly accurate. FlowFuse anticipates our needs and suggests solutions before problems even arise."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar testimonial-avatar-2"></div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Marcus Rodriguez</div>
+                                <div class="testimonial-role">Project Manager, InnovateCorp</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            "Integration was seamless. We were up and running in minutes, and the learning curve was practically non-existent for our team."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="testimonial-avatar testimonial-avatar-3"></div>
+                            <div class="testimonial-info">
+                                <div class="testimonial-name">Emily Parker</div>
+                                <div class="testimonial-role">Operations Director, GrowthLabs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Company logos -->
+            <div class="company-logos">
+                <div class="company-logo">TechFlow</div>
+                <div class="company-logo">InnovateCorp</div>
+                <div class="company-logo">GrowthLabs</div>
+                <div class="company-logo">StreamlineX</div>
+                <div class="company-logo">FlexiWork</div>
+                <div class="company-logo">NextGen Pro</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Integrations Section -->
+    <section class="integrations" id="integrations">
+        <div class="integrations-bg">
+            <div class="integrations-bg-element integrations-bg-1"></div>
+            <div class="integrations-bg-element integrations-bg-2"></div>
+            <div class="integrations-bg-element integrations-bg-3"></div>
+        </div>
+        
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <svg class="section-badge-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <span>Powerful Integrations</span>
+                </div>
+                <h2 class="section-title">
+                    Connect Everything.
+                    <span class="section-title-accent">Achieve Anything.</span>
+                </h2>
+                <p class="section-description">
+                    FlowFuse works seamlessly with the tools you already love. Build your perfect workflow by connecting your favorite apps in minutes, not hours.
+                </p>
+            </div>
+            
+            <div class="integrations-grid">
+                <a href="coming-soon.html?feature=integration-google" class="integration-card popular">
+                    <div class="integration-badge">Popular</div>
+                    <div class="integration-logo integration-logo-google">GW</div>
+                    <div class="integration-content">
+                        <h3 class="integration-name">Google Workspace</h3>
+                        <div class="integration-category">Communication</div>
+                    </div>
+                </a>
+                
+                <a href="coming-soon.html?feature=integration-slack" class="integration-card popular">
+                    <div class="integration-badge">Popular</div>
+                    <div class="integration-logo integration-logo-slack">SL</div>
+                    <div class="integration-content">
+                        <h3 class="integration-name">Slack</h3>
+                        <div class="integration-category">Messaging</div>
+                    </div>
+                </a>
+                
+                <a href="coming-soon.html?feature=integration-microsoft" class="integration-card popular">
+                    <div class="integration-badge">Popular</div>
+                    <div class="integration-logo integration-logo-microsoft">M365</div>
+                    <div class="integration-content">
+                        <h3 class="integration-name">Microsoft 365</h3>
+                        <div class="integration-category">Productivity</div>
+                    </div>
+                </a>
+                
+                <a href="coming-soon.html?feature=integration-github" class="integration-card">
+                    <div class="integration-logo integration-logo-github">GH</div>
+                    <div class="integration-content">
+                        <h3 class="integration-name">GitHub</h3>
+                        <div class="integration-category">Development</div>
+                    </div>
+                </a>
+                
+                <a href="coming-soon.html?feature=integration-figma" class="integration-card">
+                    <div class="integration-logo integration-logo-figma">FG</div>
+                    <div class="integration-content">
+                        <h3 class="integration-name">Figma</h3>
+                        <div class="integration-category">Design</div>
+                    </div>
+                </a>
+                
+                <a href="coming-soon.html?feature=integration-jira" class="integration-card">
+                    <div class="integration-logo integration-logo-jira">JR</div>
+                    <div class="integration-content">
+                        <h3 class="integration-name">Jira</h3>
+                        <div class="integration-category">Project Mgmt</div>
+                    </div>
+                </a>
+                
+                <a href="coming-soon.html?feature=integration-notion" class="integration-card">
+                    <div class="integration-logo integration-logo-notion">NT</div>
+                    <div class="integration-content">
+                        <h3 class="integration-name">Notion</h3>
+                        <div class="integration-category">Documentation</div>
+                    </div>
+                </a>
+                
+                <a href="coming-soon.html?feature=integration-zoom" class="integration-card">
+                    <div class="integration-logo integration-logo-zoom">ZM</div>
+                    <div class="integration-content">
+                        <h3 class="integration-name">Zoom</h3>
+                        <div class="integration-category">Video Calls</div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="integrations-footer">
+                <h3 class="integrations-footer-title">200+ More Integrations Coming Soon</h3>
+                <p class="integrations-footer-description">
+                    We're constantly adding new integrations based on user feedback. Don't see your favorite tool? Let us know and we'll prioritize it.
+                </p>
+                <div class="integrations-footer-actions">
+                    <a href="coming-soon.html?feature=all-integrations" class="btn btn-primary">
+                        View All Integrations
+                        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </a>
+                    <a href="coming-soon.html?feature=request-integration" class="btn btn-outline">
+                        Request Integration
+                        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="final-cta-bg">
+            <div class="final-cta-bg-element final-cta-bg-1"></div>
+            <div class="final-cta-bg-element final-cta-bg-2"></div>
+        </div>
+        
+        <div class="container">
+            <h2 class="final-cta-title">
+                Ready to Transform Your Team's Productivity?
+            </h2>
+            <p class="final-cta-description">
+                Join thousands of teams already using FlowFuse to work smarter, not harder.
+            </p>
+            
+            <!-- Pricing preview -->
+            <div class="pricing-preview">
+                <div class="pricing-preview-content">
+                    <div class="pricing-preview-header">
+                        <div class="pricing-preview-price">Start Free</div>
+                        <div class="pricing-preview-terms">14-day trial • No credit card required</div>
+                    </div>
+                    <div class="pricing-preview-features">
+                        <div class="pricing-feature">
+                            <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Unlimited projects</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>AI-powered insights</span>
+                        </div>
+                        <div class="pricing-feature">
+                            <svg class="pricing-feature-icon" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>All integrations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="final-cta-actions">
+                <a href="signup.html" class="btn btn-cta-primary">
+                    Start Your Free Trial
+                    <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                    </svg>
+                </a>
+                <a href="coming-soon.html?feature=demo" class="btn btn-cta-secondary">
+                    <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1.5a2.5 2.5 0 015 0H17M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    Schedule a Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">
+                            <div class="footer-logo-shape"></div>
+                        </div>
+                        <span class="footer-logo-text">FlowFuse</span>
+                    </div>
+                    
+                    <p class="footer-description">
+                        Transform chaos into clarity with AI-powered project management that adapts to your team's rhythm.
+                    </p>
+                    
+                    <div class="footer-contact">
+                        <div class="footer-contact-item">
+                            <svg class="footer-contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <a href="mailto:support@flowfuse.com">support@flowfuse.com</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <svg class="footer-contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                            <a href="coming-soon.html?feature=phone-support">+1 (555) 123-4567</a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <svg class="footer-contact-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span>San Francisco, CA</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product -->
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Product</h3>
+                    <ul class="footer-links">
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="coming-soon.html?feature=pricing">Pricing</a></li>
+                        <li><a href="coming-soon.html?feature=integrations">Integrations</a></li>
+                        <li><a href="coming-soon.html?feature=api">API</a></li>
+                        <li><a href="coming-soon.html?feature=security">Security</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Solutions -->
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Solutions</h3>
+                    <ul class="footer-links">
+                        <li><a href="coming-soon.html?feature=project-managers">Project Managers</a></li>
+                        <li><a href="coming-soon.html?feature=marketing">Marketing Teams</a></li>
+                        <li><a href="coming-soon.html?feature=startups">Startups</a></li>
+                        <li><a href="coming-soon.html?feature=agencies">Agencies</a></li>
+                        <li><a href="coming-soon.html?feature=enterprise">Enterprise</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Resources -->
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="coming-soon.html?feature=blog">Blog</a></li>
+                        <li><a href="coming-soon.html?feature=help">Help Center</a></li>
+                        <li><a href="coming-soon.html?feature=community">Community</a></li>
+                        <li><a href="coming-soon.html?feature=webinars">Webinars</a></li>
+                        <li><a href="coming-soon.html?feature=case-studies">Case Studies</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="coming-soon.html?feature=facebook" class="footer-social-link" aria-label="Facebook">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"></path>
+                        </svg>
+                    </a>
+                    <a href="coming-soon.html?feature=twitter" class="footer-social-link" aria-label="Twitter">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"></path>
+                        </svg>
+                    </a>
+                    <a href="coming-soon.html?feature=linkedin" class="footer-social-link" aria-label="LinkedIn">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"></path>
+                        </svg>
+                    </a>
+                    <a href="coming-soon.html?feature=github" class="footer-social-link" aria-label="GitHub">
+                        <svg fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="footer-legal">
+                    <a href="coming-soon.html?feature=privacy">Privacy Policy</a>
+                    <a href="coming-soon.html?feature=terms">Terms of Service</a>
+                    <a href="coming-soon.html?feature=cookies">Cookies</a>
+                </div>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>&copy; 2024 FlowFuse. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>

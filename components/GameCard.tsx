@@ -162,7 +162,7 @@ export function GameCard({
           <h3 className="game-card-title group-hover:text-[var(--accent-blue)] transition-colors duration-200 m-[0px] mx-[0px] my-[4px] mx-[0px] my-[4px] mt-[4px] mr-[0px] mb-[0px] ml-[0px]">
             {game.titleCN || game.title}
           </h3>
-          <p className="game-card-developer mt-[0px] mr-[0px] mb-[12px] ml-[0px]">
+          <p className="game-card-developer mt-[0px] mr-[0px] mb-[8px] ml-[0px]">
             by {game.developer}
           </p>
         </div>

@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaCore - 終極遊戲平台</title>
+    <meta name="description" content="發現下一個史詩級遊戲體驗。加入數百萬玩家的行列，探索無限可能的遊戲世界。">
+    <meta name="keywords" content="遊戲, 遊戲平台, 遊戲商店, 電子遊戲, NovaCore">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* NovaCore Gaming Platform - Complete Static CSS */
+        :root {
+            --font-size: 16px;
+            
+            /* Modern Gaming Platform Color System */
+            --midnight-black: #0B0D17;
+            --slate-dark: #151822;
+            --slate-medium: #1F2331;
+            --slate-light: #2A2F42;
+            --accent-blue: #3B82F6;
+            --accent-purple: #8B5CF6;
+            --accent-green: #10B981;
+            --accent-orange: #F59E0B;
+            --accent-cyan: #06B6D4;
+            --text-primary: #FFFFFF;
+            --text-secondary: #9CA3AF;
+            --text-muted: #6B7280;
+            --border-subtle: #374151;
+            --border-default: #4B5563;
+            --destructive: #EF4444;
+            
+            /* Typography Variables */
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            /* Spacing Scale */
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+            --spacing-4xl: 96px;
+            
+            /* Border Radius */
+            --radius-sm: 4px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-2xl: 24px;
+            
+            /* Shadows */
+            --shadow-small: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-large: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-glow: 0 0 20px rgba(59, 130, 246, 0.15);
+            --shadow-glow-purple: 0 0 20px rgba(139, 92, 246, 0.15);
+            --shadow-dropdown: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+            
+            /* Game Card Variables */
+            --game-card-width: 256px;
+            --game-card-height: 360px;
+            --game-card-image-height: 200px;
+            --game-card-content-padding: 16px;
+            --game-card-gap: 24px;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: var(--font-size);
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Instrument Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-weight: var(--font-weight-normal);
+            background: var(--midnight-black);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: -0.01em;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        /* Typography System */
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 6rem);
+            font-weight: var(--font-weight-bold);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: var(--font-weight-bold);
+            line-height: 1.2;
+            letter-spacing: -0.015em;
+            color: var(--text-primary);
+        }
+
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 2rem);
+            font-weight: var(--font-weight-semibold);
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+        }
+
+        h4 {
+            font-size: 1.25rem;
+            font-weight: var(--font-weight-semibold);
+            line-height: 1.4;
+            color: var(--text-primary);
+        }
+
+        p {
+            font-size: 1rem;
+            font-weight: var(--font-weight-normal);
+            line-height: 1.6;
+            letter-spacing: -0.005em;
+            color: var(--text-secondary);
+        }
+
+        small {
+            font-size: 0.875rem;
+            color: var(--text-muted);
+        }
+
+        /* Utility Classes */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .text-gradient {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.625rem 1.25rem;
+            font-family: inherit;
+            font-weight: var(--font-weight-medium);
+            font-size: 0.875rem;
+            border-radius: var(--radius-md);
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            letter-spacing: 0;
+            line-height: 1.5;
+        }
+
+        .btn-primary {
+            background: var(--accent-blue);
+            color: var(--text-primary);
+            box-shadow: var(--shadow-small);
+        }
+
+        .btn-primary:hover {
+            background: #2563EB;
+            box-shadow: var(--shadow-glow);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-blue);
+            border: 1px solid var(--accent-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-blue);
+            color: var(--text-primary);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: var(--text-secondary);
+            border: none;
+            padding: 0.5rem;
+        }
+
+        .btn-ghost:hover {
+            background: var(--slate-medium);
+            color: var(--text-primary);
+        }
+
+        /* Background Effects */
+        .digital-vanguard-bg {
+            position: relative;
+        }
+
+        .digital-vanguard-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: var(--shadow-glow);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(59, 130, 246, 0.25);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .slide-in-right {
+            animation: slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .cosmic-glow {
+            box-shadow: var(--shadow-glow-purple);
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        .nova-pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Header Styles */
+        .header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            border-bottom: 1px solid var(--border-subtle);
+            backdrop-filter: blur(12px);
+            background: rgba(11, 13, 23, 0.9);
+            overflow: visible;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 25% 25%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 0.75rem;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: var(--font-weight-bold);
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: none;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: var(--font-weight-medium);
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            margin-top: 8px;
+            width: 280px;
+            background: var(--slate-dark);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            padding: 8px;
+            box-shadow: var(--shadow-dropdown);
+            z-index: 100;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+            animation: fadeIn 0.2s ease;
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 12px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            transition: all 0.2s ease;
+        }
+
+        .dropdown-item:hover {
+            background: var(--slate-medium);
+            color: var(--accent-blue);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .search-box {
+            display: none;
+            align-items: center;
+            background: var(--slate-medium);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            padding: 0.5rem 1rem;
+            width: 300px;
+            margin: 0 1rem;
+        }
+
+        .search-box input {
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text-primary);
+            flex: 1;
+            margin-left: 0.5rem;
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-muted);
+        }
+
+        .cart-badge {
+            position: relative;
+        }
+
+        .cart-badge .badge {
+            position: absolute;
+            top: -4px;
+            right: -4px;
+            background: var(--accent-blue);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-menu-btn {
+            display: block;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 64px;
+            left: 0;
+            right: 0;
+            background: var(--midnight-black);
+            border-bottom: 1px solid var(--border-subtle);
+            padding: 1rem;
+            z-index: 40;
+        }
+
+        .mobile-menu.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .mobile-menu-item {
+            display: block;
+            padding: 1rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            margin-bottom: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-menu-item:hover {
+            background: var(--slate-medium);
+            color: var(--accent-blue);
+        }
+
+        /* Show navigation on larger screens */
+        @media (min-width: 768px) {
+            .nav-links {
+                display: flex;
+            }
+            .search-box {
+                display: flex;
+            }
+            .mobile-menu-btn {
+                display: none;
+            }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: var(--spacing-4xl) 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        @media (min-width: 640px) {
+            .hero-actions {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        /* Game Cards */
+        .games-section {
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .section-header h2 {
+            margin-bottom: 1rem;
+        }
+
+        .games-scroll-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .games-scroll {
+            display: flex;
+            gap: var(--game-card-gap);
+            padding: 0 var(--spacing-md);
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .games-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--game-card-gap);
+            margin-top: var(--spacing-2xl);
+            padding: 0 var(--spacing-md);
+        }
+
+        .game-card {
+            width: var(--game-card-width);
+            height: var(--game-card-height);
+            background: var(--slate-dark);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .game-card-image {
+            height: var(--game-card-image-height);
+            background: linear-gradient(135deg, var(--slate-medium), var(--slate-light));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-card-content {
+            padding: var(--game-card-content-padding);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .game-card h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            line-height: 1.3;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            min-height: 2.6rem;
+        }
+
+        .game-card .developer {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .game-card .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .star {
+            color: var(--accent-orange);
+            fill: currentColor;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: var(--font-weight-medium);
+            border-radius: var(--radius-md);
+            border: 1px solid;
+        }
+
+        .badge-blue {
+            background: rgba(59, 130, 246, 0.1);
+            color: var(--accent-blue);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .badge-orange {
+            background: rgba(245, 158, 11, 0.1);
+            color: var(--accent-orange);
+            border-color: rgba(245, 158, 11, 0.3);
+        }
+
+        .game-card .price {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: auto;
+            padding-top: 0.75rem;
+        }
+
+        .price-text {
+            font-size: 1.125rem;
+            font-weight: var(--font-weight-semibold);
+            color: var(--accent-green);
+        }
+
+        /* Game Card Actions */
+        .game-card-actions {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(21, 24, 34, 0.95));
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .game-card:hover .game-card-actions {
+            transform: translateY(0);
+        }
+
+        /* Featured Games */
+        .featured-games {
+            background: var(--slate-dark);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-xl);
+            padding: var(--spacing-2xl);
+            margin: var(--spacing-3xl) 0;
+        }
+
+        .featured-games h3 {
+            text-align: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        /* NovaVerse Section */
+        .novaverse-section {
+            padding: var(--spacing-4xl) 0;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-2xl);
+            margin: var(--spacing-3xl) 0;
+            text-align: center;
+        }
+
+        .novaverse-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .novaverse-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            box-shadow: var(--shadow-glow-purple);
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--border-subtle);
+            margin-top: var(--spacing-4xl);
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .footer-content {
+            display: grid;
+            gap: 2rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: 2fr 1fr 1fr;
+            }
+        }
+
+        .footer-section h4 {
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-subtle);
+            margin-top: 2rem;
+            padding-top: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--slate-medium);
+            border-radius: var(--radius-md);
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.2s ease;
+            font-size: 1.25rem;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-blue);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero {
+                padding: var(--spacing-2xl) 0;
+            }
+            
+            .games-grid {
+                grid-template-columns: 1fr;
+                padding: 0;
+            }
+            
+            .games-section {
+                padding: var(--spacing-2xl) 0;
+            }
+
+            :root {
+                --game-card-width: 100%;
+                --game-card-height: 320px;
+                --game-card-image-height: 180px;
+                --game-card-gap: 16px;
+            }
+        }
+
+        @media (min-width: 641px) and (max-width: 1024px) {
+            :root {
+                --game-card-width: 220px;
+                --game-card-height: 340px;
+                --game-card-image-height: 170px;
+                --game-card-gap: 20px;
+            }
+        }
+
+        /* Hover animations for interactive elements */
+        .game-card,
+        .btn,
+        .nav-links a,
+        .footer-links a,
+        .social-links a {
+            will-change: transform;
+        }
+
+        /* Performance optimizations */
+        .hero::before,
+        .digital-vanguard-bg::before {
+            will-change: opacity;
+        }
+
+        /* Focus styles for accessibility */
+        .btn:focus,
+        .nav-links a:focus,
+        .footer-links a:focus {
+            outline: 2px solid var(--accent-blue);
+            outline-offset: 2px;
+        }
+
+        /* Utility classes */
+        .hidden {
+            display: none;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body class="digital-vanguard-bg">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <!-- Logo -->
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                        </svg>
+                    </div>
+                    <span class="logo-text">NovaCore</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="#">商店 ▼</a>
+                        <div class="dropdown-content">
+                            <a href="#" class="dropdown-item">
+                                <div>
+                                    <div style="font-weight: 500; color: var(--text-primary);">瀏覽遊戲</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.25rem;">探索我們完整的遊戲目錄</div>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div>
+                                    <div style="font-weight: 500; color: var(--text-primary);">免費遊戲</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.25rem;">發現精彩的免費遊戲</div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">NovaVerse ▼</a>
+                        <div class="dropdown-content">
+                            <a href="#" class="dropdown-item">
+                                <div>
+                                    <div style="font-weight: 500; color: var(--text-primary);">社群論壇</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.25rem;">與其他玩家討論遊戲</div>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div>
+                                    <div style="font-weight: 500; color: var(--text-primary);">遊戲群組</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.25rem;">加入志同道合的玩家群組</div>
+                                </div>
+                            </a>
+                            <a href="#" class="dropdown-item">
+                                <div>
+                                    <div style="font-weight: 500; color: var(--text-primary);">尋找隊友</div>
+                                    <div style="font-size: 0.875rem; color: var(--text-secondary); margin-top: 0.25rem;">找到完美的遊戲夥伴</div>
+                                </div>
+                            </a>
+                        </div>
+                    </li>
+                    <li><a href="#">開發者</a></li>
+                </ul>
+
+                <!-- Search Box -->
+                <div class="search-box">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" placeholder="搜尋遊戲...">
+                </div>
+
+                <!-- Navigation Actions -->
+                <div class="nav-actions">
+                    <button class="btn btn-ghost cart-badge" title="願望清單">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span class="badge">3</span>
+                    </button>
+                    <button class="btn btn-ghost cart-badge" title="購物車">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="badge">2</span>
+                    </button>
+                    <button class="btn btn-ghost" title="使用者選單">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </button>
+                    <button class="btn btn-ghost mobile-menu-btn" onclick="toggleMobileMenu()" title="選單">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <div class="search-box" style="display: flex; margin-bottom: 1rem; width: 100%;">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="search" placeholder="搜尋遊戲...">
+                </div>
+                <a href="#" class="mobile-menu-item">瀏覽遊戲</a>
+                <a href="#" class="mobile-menu-item">免費遊戲</a>
+                <a href="#" class="mobile-menu-item">社群論壇</a>
+                <a href="#" class="mobile-menu-item">遊戲群組</a>
+                <a href="#" class="mobile-menu-item">開發者</a>
+                <a href="#" class="mobile-menu-item">我的願望清單</a>
+                <a href="#" class="mobile-menu-item">我的檔案</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero fade-in">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="text-gradient">發現下一個<br>史詩級遊戲體驗</h1>
+                    <p>加入數百萬玩家的行列，探索無限可能的遊戲世界。從獨立創作到3A大作，找到專屬於你的完美遊戲。</p>
+                    <div class="hero-actions">
+                        <a href="#featured" class="btn btn-primary">開始探索</a>
+                        <a href="#" class="btn btn-secondary">下載啟動器</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Games Section -->
+        <section class="games-section" id="featured">
+            <div class="container">
+                <div class="featured-games">
+                    <h3 class="text-gradient">精選遊戲</h3>
+                    
+                    <div class="games-scroll-container">
+                        <div class="games-scroll">
+                            <div class="game-card fade-in">
+                                <div class="game-card-image">
+                                    <div style="background: linear-gradient(135deg, #1e293b, #334155); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+                                        賽博龐克：未來之城
+                                    </div>
+                                </div>
+                                <div class="game-card-content">
+                                    <h4>賽博龐克：未來之城</h4>
+                                    <div class="developer">CD Projekt RED</div>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span>4.8</span>
+                                        <span class="badge badge-blue">動作</span>
+                                    </div>
+                                    <div class="price">
+                                        <span class="price-text">$59.99</span>
+                                    </div>
+                                </div>
+                                <div class="game-card-actions">
+                                    <button class="btn btn-primary" style="flex: 1; font-size: 0.75rem;">詳細資訊</button>
+                                    <button class="btn btn-secondary" style="flex: 1; font-size: 0.75rem;">加入購物車</button>
+                                    <button class="btn btn-ghost" title="加入願望清單">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="game-card fade-in">
+                                <div class="game-card-image">
+                                    <div style="background: linear-gradient(135deg, #0f172a, #1e293b); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: var(--text-muted);">
+                                        星際探索者
+                                    </div>
+                                </div>
+                                <div class="game-card-content">
+                                    <h4>星際探索者</h4>
+                                    <div class="developer">Hello Games</div>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span>4.6</span>
+                                        <span class="badge badge-blue">冒險</span>
+                                    </div>
+                                    <div class="price">
+                                        <span class="price-text">$39.99</span>
+                                    </div>
+                                </div>
+                                <div class="game-card-actions">
+                                    <button class="btn btn-primary" style="flex: 1; font-size: 0.75rem;">詳細資訊</button>
+                                    <button class="btn btn-secondary" style="flex: 1; font-size: 0.75rem;">加入購物車</button>
+                                    <button class="btn btn-ghost" title="加入願望清單">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="game-card fade-in">
+                                <div class="game-card-image">
+                                    <div style="background: linear-gradient(135deg, #581c87, #7c3aed); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                                        量子戰爭
+                                    </div>
+                                </div>
+                                <div class="game-card-content">
+                                    <h4>量子戰爭</h4>
+                                    <div class="developer">Remedy Entertainment</div>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span>4.9</span>
+                                        <span class="badge badge-orange">射擊</span>
+                                    </div>
+                                    <div class="price">
+                                        <span class="price-text">$49.99</span>
+                                    </div>
+                                </div>
+                                <div class="game-card-actions">
+                                    <button class="btn btn-primary" style="flex: 1; font-size: 0.75rem;">詳細資訊</button>
+                                    <button class="btn btn-secondary" style="flex: 1; font-size: 0.75rem;">加入購物車</button>
+                                    <button class="btn btn-ghost" title="加入願望清單">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="game-card fade-in">
+                                <div class="game-card-image">
+                                    <div style="background: linear-gradient(135deg, #064e3b, #059669); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                                        魔法學院
+                                    </div>
+                                </div>
+                                <div class="game-card-content">
+                                    <h4>魔法學院：傳承</h4>
+                                    <div class="developer">Avalanche Software</div>
+                                    <div class="rating">
+                                        <span class="star">★</span>
+                                        <span>4.7</span>
+                                        <span class="badge badge-blue">RPG</span>
+                                    </div>
+                                    <div class="price">
+                                        <span class="price-text">$69.99</span>
+                                    </div>
+                                </div>
+                                <div class="game-card-actions">
+                                    <button class="btn btn-primary" style="flex: 1; font-size: 0.75rem;">詳細資訊</button>
+                                    <button class="btn btn-secondary" style="flex: 1; font-size: 0.75rem;">加入購物車</button>
+                                    <button class="btn btn-ghost" title="加入願望清單">
+                                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Game Discovery Section -->
+        <section class="games-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>熱門遊戲</h2>
+                    <p>探索最受歡迎的遊戲，加入全球玩家社群</p>
+                </div>
+
+                <div class="games-grid">
+                    <div class="game-card slide-in-right">
+                        <div class="game-card-image">
+                            <div style="background: linear-gradient(135deg, #7c2d12, #ea580c); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                                末日求生
+                            </div>
+                        </div>
+                        <div class="game-card-content">
+                            <h4>末日求生：重生</h4>
+                            <div class="developer">Naughty Dog</div>
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span>4.9</span>
+                                <span class="badge badge-orange">生存</span>
+                            </div>
+                            <div class="price">
+                                <span class="price-text">$59.99</span>
+                            </div>
+                        </div>
+                        <div class="game-card-actions">
+                            <button class="btn btn-primary" style="flex: 1; font-size: 0.75rem;">詳細資訊</button>
+                            <button class="btn btn-secondary" style="flex: 1; font-size: 0.75rem;">加入購物車</button>
+                            <button class="btn btn-ghost" title="加入願望清單">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="game-card slide-in-right">
+                        <div class="game-card-image">
+                            <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                                競速狂飆
+                            </div>
+                        </div>
+                        <div class="game-card-content">
+                            <h4>競速狂飆：極限</h4>
+                            <div class="developer">Turn 10 Studios</div>
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span>4.5</span>
+                                <span class="badge badge-blue">競速</span>
+                            </div>
+                            <div class="price">
+                                <span class="price-text">$49.99</span>
+                            </div>
+                        </div>
+                        <div class="game-card-actions">
+                            <button class="btn btn-primary" style="flex: 1; font-size: 0.75rem;">詳細資訊</button>
+                            <button class="btn btn-secondary" style="flex: 1; font-size: 0.75rem;">加入購物車</button>
+                            <button class="btn btn-ghost" title="加入願望清單">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="game-card slide-in-right">
+                        <div class="game-card-image">
+                            <div style="background: linear-gradient(135deg, #92400e, #d97706); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                                戰術大師
+                            </div>
+                        </div>
+                        <div class="game-card-content">
+                            <h4>戰術大師：全球行動</h4>
+                            <div class="developer">Firaxis Games</div>
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span>4.8</span>
+                                <span class="badge badge-orange">策略</span>
+                            </div>
+                            <div class="price">
+                                <span class="price-text">$39.99</span>
+                            </div>
+                        </div>
+                        <div class="game-card-actions">
+                            <button class="btn btn-primary" style="flex: 1; font-size: 0.75rem;">詳細資訊</button>
+                            <button class="btn btn-secondary" style="flex: 1; font-size: 0.75rem;">加入購物車</button>
+                            <button class="btn btn-ghost" title="加入願望清單">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="game-card slide-in-right">
+                        <div class="game-card-image">
+                            <div style="background: linear-gradient(135deg, #4c1d95, #7c3aed); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                                神話傳說
+                            </div>
+                        </div>
+                        <div class="game-card-content">
+                            <h4>神話傳說：諸神黃昏</h4>
+                            <div class="developer">Santa Monica Studio</div>
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span>5.0</span>
+                                <span class="badge badge-blue">動作</span>
+                            </div>
+                            <div class="price">
+                                <span class="price-text">$69.99</span>
+                            </div>
+                        </div>
+                        <div class="game-card-actions">
+                            <button class="btn btn-primary" style="flex: 1; font-size: 0.75rem;">詳細資訊</button>
+                            <button class="btn btn-secondary" style="flex: 1; font-size: 0.75rem;">加入購物車</button>
+                            <button class="btn btn-ghost" title="加入願望清單">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="game-card slide-in-right">
+                        <div class="game-card-image">
+                            <div style="background: linear-gradient(135deg, #155e75, #0891b2); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                                宇宙殖民
+                            </div>
+                        </div>
+                        <div class="game-card-content">
+                            <h4>宇宙殖民：新世界</h4>
+                            <div class="developer">Paradox Interactive</div>
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span>4.6</span>
+                                <span class="badge badge-orange">模擬</span>
+                            </div>
+                            <div class="price">
+                                <span class="price-text">$44.99</span>
+                            </div>
+                        </div>
+                        <div class="game-card-actions">
+                            <button class="btn btn-primary" style="flex: 1; font-size: 0.75rem;">詳細資訊</button>
+                            <button class="btn btn-secondary" style="flex: 1; font-size: 0.75rem;">加入購物車</button>
+                            <button class="btn btn-ghost" title="加入願望清單">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="game-card slide-in-right">
+                        <div class="game-card-image">
+                            <div style="background: linear-gradient(135deg, #713f12, #a16207); width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; color: white;">
+                                古代王國
+                            </div>
+                        </div>
+                        <div class="game-card-content">
+                            <h4>古代王國：帝國崛起</h4>
+                            <div class="developer">Creative Assembly</div>
+                            <div class="rating">
+                                <span class="star">★</span>
+                                <span>4.4</span>
+                                <span class="badge badge-blue">策略</span>
+                            </div>
+                            <div class="price">
+                                <span class="price-text">$54.99</span>
+                            </div>
+                        </div>
+                        <div class="game-card-actions">
+                            <button class="btn btn-primary" style="flex: 1; font-size: 0.75rem;">詳細資訊</button>
+                            <button class="btn btn-secondary" style="flex: 1; font-size: 0.75rem;">加入購物車</button>
+                            <button class="btn btn-ghost" title="加入願望清單">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NovaVerse Section -->
+        <section class="novaverse-section fade-in">
+            <div class="container">
+                <div class="novaverse-content">
+                    <div class="novaverse-icon cosmic-glow">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                    </div>
+                    <h2 class="text-gradient">加入 NovaVerse 社群</h2>
+                    <p>與全世界的玩家連接，分享遊戲心得，參與社群活動，發現新的遊戲夥伴。體驗前所未有的遊戲社交平台。</p>
+                    <div style="margin-top: 2rem;">
+                        <a href="#" class="btn btn-primary">立即加入社群</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div style="display: flex; align-items: center; margin-bottom: 1.5rem;">
+                        <div class="logo-icon" style="width: 32px; height: 32px; margin-right: 0.75rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-gradient">NovaCore</h4>
+                            <small>Gaming Platform</small>
+                        </div>
+                    </div>
+                    <p>終極遊戲目的地。發現、遊玩並與全球遊戲社群連接。探索無限可能的遊戲世界，享受最佳的遊戲體驗。</p>
+                    <div class="social-links" style="margin-top: 1.5rem;">
+                        <a href="#" aria-label="GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Discord">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419-.0002 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9554 2.4189-2.1568 2.4189Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>平台</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">瀏覽遊戲</a></li>
+                        <li><a href="#">免費遊戲</a></li>
+                        <li><a href="#">願望清單</a></li>
+                        <li><a href="#">下載啟動器</a></li>
+                        <li><a href="#">系統需求</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>支援</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">幫助中心</a></li>
+                        <li><a href="#">聯繫我們</a></li>
+                        <li><a href="#">錯誤回報</a></li>
+                        <li><a href="#">功能建議</a></li>
+                        <li><a href="#">開發者資源</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    <small>© 2024 NovaCore. 版權所有。採用現代網路技術建構。</small>
+                </div>
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
+                    <a href="#" style="color: var(--text-muted); text-decoration: none; font-size: 0.875rem;">隱私政策</a>
+                    <a href="#" style="color: var(--text-muted); text-decoration: none; font-size: 0.875rem;">服務條款</a>
+                    <a href="#" style="color: var(--text-muted); text-decoration: none; font-size: 0.875rem;">Cookie設定</a>
+                    <a href="#" style="color: var(--text-muted); text-decoration: none; font-size: 0.875rem;">無障礙聲明</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; flex-direction: column; gap: 10px;"></div>
+
+    <script>
+        // Basic interactivity for the static version
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile menu toggle
+            window.toggleMobileMenu = function() {
+                const mobileMenu = document.getElementById('mobileMenu');
+                mobileMenu.classList.toggle('active');
+            };
+
+            // Toast notification system
+            window.showToast = function(message, type = 'success') {
+                const toastContainer = document.getElementById('toastContainer');
+                const toast = document.createElement('div');
+                toast.style.cssText = `
+                    background: var(--slate-dark);
+                    border: 1px solid var(--border-subtle);
+                    color: var(--text-primary);
+                    padding: 1rem;
+                    border-radius: var(--radius-md);
+                    box-shadow: var(--shadow-large);
+                    animation: fadeIn 0.3s ease;
+                    max-width: 300px;
+                    position: relative;
+                `;
+                
+                if (type === 'success') {
+                    toast.style.borderLeftColor = 'var(--accent-green)';
+                    toast.style.borderLeftWidth = '4px';
+                }
+                
+                toast.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span>${type === 'success' ? '✅' : 'ℹ️'}</span>
+                        <span>${message}</span>
+                    </div>
+                `;
+                
+                toastContainer.appendChild(toast);
+                
+                setTimeout(() => {
+                    toast.style.animation = 'fadeIn 0.3s ease reverse';
+                    setTimeout(() => {
+                        if (toast.parentNode) {
+                            toast.parentNode.removeChild(toast);
+                        }
+                    }, 300);
+                }, 3000);
+            };
+
+            // Add click handlers for buttons
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (this.textContent.includes('加入購物車')) {
+                        e.preventDefault();
+                        // Animation feedback
+                        this.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            this.style.transform = '';
+                        }, 150);
+                        
+                        showToast('已加入購物車！');
+                    } else if (this.textContent.includes('詳細資訊')) {
+                        e.preventDefault();
+                        showToast('正在載入遊戲詳細資訊...', 'info');
+                    } else if (this.textContent.includes('立即加入')) {
+                        e.preventDefault();
+                        showToast('歡迎加入 NovaVerse 社群！');
+                    } else if (this.title === '加入願望清單') {
+                        e.preventDefault();
+                        this.style.color = 'var(--accent-orange)';
+                        showToast('已加入願望清單！');
+                    }
+                });
+            });
+
+            // Search functionality
+            const searchInputs = document.querySelectorAll('input[type="search"]');
+            searchInputs.forEach(input => {
+                input.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        if (this.value.trim()) {
+                            showToast(`搜尋 "${this.value}" 中...`, 'info');
+                        }
+                    }
+                });
+            });
+
+            // Add scroll-triggered animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for animation
+            document.querySelectorAll('.game-card, .hero-content, .novaverse-content').forEach(el => {
+                if (!el.classList.contains('fade-in') && !el.classList.contains('slide-in-right')) {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(20px)';
+                    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                    observer.observe(el);
+                }
+            });
+
+            // Cart counter update
+            let cartCount = 2;
+            document.addEventListener('click', function(e) {
+                if (e.target.textContent.includes('加入購物車')) {
+                    cartCount++;
+                    const cartBadge = document.querySelector('.cart-badge .badge');
+                    if (cartBadge) {
+                        cartBadge.textContent = cartCount;
+                        cartBadge.style.animation = 'pulse 0.5s ease';
+                        setTimeout(() => {
+                            cartBadge.style.animation = '';
+                        }, 500);
+                    }
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                const mobileMenu = document.getElementById('mobileMenu');
+                const menuBtn = document.querySelector('.mobile-menu-btn');
+                
+                if (mobileMenu.classList.contains('active') && 
+                    !mobileMenu.contains(e.target) && 
+                    !menuBtn.contains(e.target)) {
+                    mobileMenu.classList.remove('active');
+                }
+            });
+
+            // Keyboard navigation
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const mobileMenu = document.getElementById('mobileMenu');
+                    if (mobileMenu.classList.contains('active')) {
+                        mobileMenu.classList.remove('active');
+                    }
+                }
+            });
+
+            console.log('🎮 NovaCore Gaming Platform Loaded Successfully!');
+            console.log('✨ Welcome to the ultimate gaming destination!');
+        });
+    </script>
+</body>
+</html>
